@@ -7,17 +7,18 @@ use Model\Propiedad;
 use Model\Vendedor;
 use Intervention\Image\ImageManagerStatic as image;
 
-class PropiedadController
-{
-
+class PropiedadController{
     public static function index(Router $router)
     {
         $propiedades = Propiedad::all();
+        $vendedores = Vendedor::all();
+
         $resultado = $_GET['resultado'] ?? null;
 
         $router->render('propiedades/admin', [
             'propiedades' => $propiedades,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'vendedores' => $vendedores
         ]);
     }
 
@@ -45,7 +46,7 @@ class PropiedadController
                 $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
                 $propiedad->setImagen($nombreImagen);
             }
-           
+
 
             $errores = $propiedad->validar();
 
@@ -75,20 +76,21 @@ class PropiedadController
         ]);
     }
 
-    public static function actualizar(Router $router){
+    public static function actualizar(Router $router)
+    {
         $id = validarORedireccionar('/admin');
         //Arreglo con mensajes de errores
         $errores = Propiedad::getErrores();
         $vendedores = Vendedor::all();
         $propiedad = Propiedad::find($id);
-        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //Asignar los atributos
             $args = $_POST['propiedad'];
-        
+
             $propiedad->sincronizar($args);
-            
-        
+
+
             //Validacion 
             $errores = $propiedad->validar();
             //Generar un nombre unico
@@ -98,36 +100,36 @@ class PropiedadController
                 $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
                 $propiedad->setImagen($nombreImagen);
             }
-        
+
             //Revisar que el arreglo de errores este vacio
             if (empty($errores)) {
                 if ($_FILES['propiedad']['tmp_name']['imagen']) {
                     //Almacenar la imagen
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
-                   
                 }
-                 $propiedad->guardar();
+                $propiedad->guardar();
             }
         };
 
-        
 
-        $router->render('/propiedades/actualizar' , [
+
+        $router->render('/propiedades/actualizar', [
             'propiedad' => $propiedad,
-            'errores' =>$errores,
-            'vendedores' =>$vendedores
+            'errores' => $errores,
+            'vendedores' => $vendedores
         ]);
     }
 
-    public static function eliminar(){
+    public static function eliminar()
+    {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //validar id
             $id = $_POST['id'];
             $id = filter_var($id, FILTER_VALIDATE_INT);
-        
+
             if ($id) {
-        
+
                 $tipo = $_POST['tipo'];
                 if (validarTipoContenido($tipo)) {
                     $propiedad = Propiedad::find($id);
