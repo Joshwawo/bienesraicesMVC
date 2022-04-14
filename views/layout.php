@@ -32,7 +32,7 @@ if(!isset($caca)){
 
             <div class="barra">
 
-                <a href="/bienesraices/index.php">
+                <a href="/">
                     <img src="/build/img/logo.svg" alt="Logotipo de Binenes Raices">
                 </a>
 
@@ -43,13 +43,13 @@ if(!isset($caca)){
                 <div class="derecha">
                     <img class="dark-mode-boton" src="/build/img/dark-mode.svg" alt="">
                     <nav class="navegacion">
-                        <a href="nosotros.php">Nosotros</a>
-                        <a href="anuncios.php">Anuncios</a>
-                        <a href="blog.php">Blog</a>
-                        <a href="contacto.php">Contactanos</a>
+                        <a href="/nosotros">Nosotros</a>
+                        <a href="/propiedades">Propiedades</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contacto">Contactanos</a>
                         <!-- Ejecuta el codigo con los : -->
                         <?php if ($auth) :  ?>
-                            <a href="cerrar-sesion.php">Cerrar Sesion</a>
+                            <a href="/cerrar-sesion">Cerrar Sesion</a>
 
 
                         <?php endif; ?>
@@ -72,10 +72,10 @@ if(!isset($caca)){
     <footer class="footer seccion">
     <div class="contenedor contenedor-footer">
         <nav class="navegacion">
-            <a href="/bienesraices/nosotros.php">Nosotros</a>
-            <a href="/bienesraices/anuncios.php">Anuncios</a>
-            <a href="/bienesraices/blog.php">Blog</a>
-            <a href="/bienesraices/contacto.php">Contactanos</a>
+            <a href="nosotros">Nosotros</a>
+            <a href="propiedades">Propiedades</a>
+            <a href="blog">Blog</a>
+            <a href="contacto">Contactanos</a>
         </nav>
 
     </div>

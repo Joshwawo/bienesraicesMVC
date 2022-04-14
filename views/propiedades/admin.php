@@ -10,7 +10,7 @@
     } ?>
 
     <a href="/propiedades/crear" class="boton boton-verde"> Nueva Propiedad</a>
-    <a href="vendedores/crear" class="boton boton-amarillo"> Nuevo(a) vendedor</a>
+    <a href="/vendedores/crear" class="boton boton-amarillo"> Nuevo(a) vendedor</a>
     <h2>Propiedades</h2>
 
     <table class="propiedades">
@@ -69,13 +69,13 @@
                     <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?></td>
                     <td><?php echo $vendedor->telefono; ?></td>
                     <td>
-                        <form method="POST" class="w-100">
+                        <form method="POST" class="w-100" action="/vendedores/eliminar">
 
                             <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">
                             <input type="hidden" name="tipo" value="vendedor">
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
-                        <a href="./vendedores/actualizar.php?id=<?php echo $vendedor->id;  ?>" class="boton-amarillo-block">Actulizar</a>
+                        <a href="vendedores/actualizar?id=<?php echo $vendedor->id;  ?>" class="boton-amarillo-block">Actulizar</a>
 
                     </td>
                 </tr>
