@@ -1,6 +1,15 @@
 <main class="contenedor seccion ">
         <h1>Contacto</h1>
 
+        <?php 
+
+            if($mensaje){ ?>
+               <p class="alerta exito"> <?php echo $mensaje; ?> </p>;
+            
+
+       <?php } ?>
+
+
         <picture>
             <source srcset="build/img/destacada3.webp" type="image/webp">
             <source srcset="build/img/destacada3.jpg" type="image/jpg">
@@ -18,12 +27,12 @@
 
                 <input type="text" placeholder="Tu Nombre" id="nombre" name="contacto[nombre]" >
                 <!-- Ewe no se que va aqui pero combia el campo -->
-                <label for="email">Email</label>
-                <input type="email" placeholder="email" id="email" name="contacto[email]" require>
+                <!-- <label for="email">Email</label>
+                <input type="email" placeholder="email" id="email" name="contacto[email]" require> -->
 
-
+<!-- 
                 <label for="telefono">Telefono</label>
-                <input type="tel" placeholder="Tu telefono" id="telefono" name="contacto[telefono]" >
+                <input type="tel" placeholder="Tu telefono" id="telefono" name="contacto[telefono]" > -->
 
                 <label for="mensaje">Mensaje</label>
                 <textarea name="contacto[mensaje]" id="mensaje" ></textarea>
@@ -51,18 +60,15 @@
 
                 <div class="forma-contacto">
                     <label for="contactar-telefono">Telefono</label>
-                    <input  type="radio" value="telefono" id="contactar-telefono" name="contacto[contacto]" >
+                    <input name="contacto[contacto]"  type="radio" value="telefono" id="contactar-telefono"  >
 
                     <label for="contactar-email">Email</label>
-                    <input  type="radio" value="email" id="contactar-email" name="contacto[contacto]" >
+                    <input name="contacto[contacto]" type="radio" value="email" id="contactar-email"  >
                 </div>
 
-                <p>Si eligio telefono, elija la fecha y hora</p>
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="contacto[fecha]">
+                <div id="contacto"></div>
 
-                <label for="hora">Hora:</label>
-                <input type="time" id="hora" min="09:00" max="18:00" name="contacto[hora]">
+                
 
             </fieldset>
 
