@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     eventListeners();
     // darkMode();
+    const alertas = document.getElementById('#alertas');
+
+    setTimeout(() =>{
+        alertas.remove();
+    },5000 )
 });
 
 function darkMode() {
@@ -83,6 +88,12 @@ function mostrarMetodoContacto(evento) {
         <input type="email" placeholder="Email" id="email" name="contacto[email]" >          
         
         `;
+    }
+
+    
+
+    function quitarAnuncio(){
+
     }
 
 }

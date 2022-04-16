@@ -49,7 +49,7 @@ if(!isset($caca)){
                         <a href="/contacto">Contactanos</a>
                         <!-- Ejecuta el codigo con los : -->
                         <?php if ($auth) :  ?>
-                            <a href="/cerrar-sesion">Cerrar Sesion</a>
+                            <a href="/logout">Cerrar Sesion</a>
 
 
                         <?php endif; ?>
