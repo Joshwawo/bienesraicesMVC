@@ -58,11 +58,11 @@ if(!isset($caca)){
 
             </div>
 
-            <?php
-            if ($caca) {
-                echo '<h1>Venta de casa y Departamentos de lujo </h1>';
-            }
-            ?>
+           <?php 
+            echo $caca ? "<h1 data-cy='heading-sitio' >Venta de casa y Departamentos de lujo </h1>" : '';
+           ?>
+
+
         </div>
 
 

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     eventListeners();
     // darkMode();
-    const alertas = document.getElementById('#alertas');
+    const alertas = document.getElementById('alertas');
 
     setTimeout(() =>{
         alertas.remove();
