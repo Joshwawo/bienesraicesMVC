@@ -1,17 +1,17 @@
-<div class="contenedor-anuncios">
+<div class="contenedor-anuncios" >
 
     <?php foreach ($propiedades as $propiedad) { ?>
 
-        <div class="anuncio">
+        <div class="anuncio" data-cy="anuncio" >
 
             <img loading="lazy" src="/imagenes/<?php echo $propiedad->imagen ?>" alt="Anuncio">
 
             <div class="contenido-anuncio">
                 <h3><?php echo $propiedad->titulo ?></h3>
                 <p><?php echo $propiedad->descripcion; ?></p>
-                <p class="precio">$<?php echo $propiedad->precio; ?> Mxn</p>
+                <p class="precio" >$<?php echo $propiedad->precio; ?> Mxn</p>
 
-                <ul class="iconos-caracteristicas">
+                <ul class="iconos-caracteristicas" >
                     <li>
                         <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
                         <p> <?php echo $propiedad->wc; ?> </p>
@@ -28,10 +28,7 @@
 
                 </ul> <!-- fin iconos-carateristicas -->
 
-                <a href="propiedad?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">
-
-                    Ver Propiedad
-                </a>
+                <a data-cy="enlace-propiedad" href="propiedad?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">Ver Propiedad</a>
             </div> <!-- contenido-anuncios -->
         </div> <!-- fin anuncio -->
     <?php } ?>

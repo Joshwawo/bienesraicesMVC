@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 
 $auth = $_SESSION['login'] ?? false;
 
-if(!isset($caca)){
+if (!isset($caca)) {
     $caca = false;
 }
 ?>
@@ -42,7 +42,7 @@ if(!isset($caca)){
 
                 <div class="derecha">
                     <img class="dark-mode-boton" src="/build/img/dark-mode.svg" alt="">
-                    <nav class="navegacion">
+                    <nav data-cy="navegacion-header" class="navegacion">
                         <a href="/nosotros">Nosotros</a>
                         <a href="/propiedades">Propiedades</a>
                         <a href="/blog">Blog</a>
@@ -58,9 +58,9 @@ if(!isset($caca)){
 
             </div>
 
-           <?php 
+            <?php
             echo $caca ? "<h1 data-cy='heading-sitio' >Venta de casa y Departamentos de lujo </h1>" : '';
-           ?>
+            ?>
 
 
         </div>
@@ -70,20 +70,20 @@ if(!isset($caca)){
     <?php echo $contenido; ?>
 
     <footer class="footer seccion">
-    <div class="contenedor contenedor-footer">
-        <nav class="navegacion">
-            <a href="nosotros">Nosotros</a>
-            <a href="propiedades">Propiedades</a>
-            <a href="blog">Blog</a>
-            <a href="contacto">Contactanos</a>
-        </nav>
+        <div class="contenedor contenedor-footer">
+            <nav data-cy="navegacion-footer" class="navegacion">
+                <a href="/nosotros">Nosotros</a>
+                <a href="/propiedades">Propiedades</a>
+                <a href="/blog">Blog</a>
+                <a href="/contacto">Contactanos</a>
+            </nav>
 
-    </div>
-    
-    <p class="copyright"> Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
+        </div>
 
-</footer> <!-- Fin del Footer -->
-<script src="../build/js/bundle.min.js"></script>
+        <p data-cy="copyright" class="copyright"> Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
+
+    </footer> <!-- Fin del Footer -->
+    <script src="../build/js/bundle.min.js"></script>
 </body>
 
 </html>

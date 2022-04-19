@@ -19,7 +19,6 @@ class LoginController
 
             if (empty($errores)) {
                 //Verificar si el usuario existe
-
                 $resultado = $auth->existeUsuario();
                 //Verificar el password
 

@@ -1,10 +1,10 @@
 <main class="contenedor seccion ">
-        <h1>Contacto</h1>
+        <h1 data-cy="pagina-contacto" >Contacto</h1>
 
         <?php 
 
             if($mensaje){ ?>
-               <p class="alerta exito"> <?php echo $mensaje; ?> </p>;
+               <p data-cy="alerta-envio-formulario" class="alerta exito"><?php echo $mensaje; ?></p>;
             
 
        <?php } ?>
@@ -16,26 +16,18 @@
             <img src="build/img/destacada3.jpg" alt="">
         </picture>
 
-        <h2>Llene el Formulario de Contacto</h2>
+        <h2 data-cy="form-contacto" >Llene el Formulario de Contacto</h2>
 
-        <form class="formulario" action="/contacto" method="POST">
+        <form data-cy="form-de-contacto" class="formulario" action="/contacto" method="POST">
 
             <fieldset>
                 <legend>Informacio Personal</legend>
 
                 <label for="nombre">Nombre</label>
 
-                <input type="text" placeholder="Tu Nombre" id="nombre" name="contacto[nombre]" >
-                <!-- Ewe no se que va aqui pero combia el campo -->
-                <!-- <label for="email">Email</label>
-                <input type="email" placeholder="email" id="email" name="contacto[email]" require> -->
-
-<!-- 
-                <label for="telefono">Telefono</label>
-                <input type="tel" placeholder="Tu telefono" id="telefono" name="contacto[telefono]" > -->
-
+                <input data-cy="input-nombre" type="text" placeholder="Tu Nombre" id="nombre" name="contacto[nombre]" >
                 <label for="mensaje">Mensaje</label>
-                <textarea name="contacto[mensaje]" id="mensaje" ></textarea>
+                <textarea data-cy="input-mensaje" name="contacto[mensaje]" id="mensaje" ></textarea>
 
             </fieldset>
 
@@ -43,14 +35,14 @@
                 <legend>Informacion sobre la propiedad </legend>
 
                 <label for="opciones">Vende o compra</label>
-                <select  id="opciones" name="contacto[opciones]" >
+                <select data-cy="input-opciones" id="opciones" name="contacto[opciones]" >
                     <option value="" disabled selected>--Seleccione--</option>
                     <option value="compra">compra</option>
                     <option value="vende">vende</option>
                 </select>
 
                 <label for="presupuesto">Precio o Presupuesto</label>
-                <input type="number" placeholder="Tu Presupuesto" id="presupuesto" name="contacto[precio]" >
+                <input data-cy="input-presupuesto" type="number" placeholder="Tu Presupuesto" id="presupuesto" name="contacto[precio]" >
 
             </fieldset>
 
@@ -60,10 +52,10 @@
 
                 <div class="forma-contacto">
                     <label for="contactar-telefono">Telefono</label>
-                    <input name="contacto[contacto]"  type="radio" value="telefono" id="contactar-telefono"  >
+                    <input data-cy="forma-contacto" name="contacto[contacto]"  type="radio" value="telefono" id="contactar-telefono"  >
 
                     <label for="contactar-email">Email</label>
-                    <input name="contacto[contacto]" type="radio" value="email" id="contactar-email"  >
+                    <input data-cy="forma-contacto" name="contacto[contacto]" type="radio" value="email" id="contactar-email"  >
                 </div>
 
                 <div id="contacto"></div>

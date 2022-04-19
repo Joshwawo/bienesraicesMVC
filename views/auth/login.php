@@ -1,18 +1,14 @@
 <main class="contenedor seccion contenido-centrado">
-    <h1>Iniciar Sesion</h1>
+    <h1 data-cy="heading-login" >Iniciar Sesion</h1>
 
     <?php foreach ($errores as $error) : ?>
 
-        <div class="alerta error">
-
-            <?php echo $error; ?>
-
-        </div>
+        <div data-cy="alerta-login" class="alerta error"><?php echo $error; ?></div>
 
     <?php endforeach; ?>
 
     <!-- Si no colocamos el action a post lo va a enviar al $_SERVER['REQUEST_METHOD'] -->
-    <form method="POST" class="formulario" action="/login">
+    <form data-cy="form-login" method="POST" class="formulario" action="/login">
 
         <fieldset>
 
